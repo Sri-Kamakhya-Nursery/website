@@ -15,7 +15,7 @@ body {
 /* GRID */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 10px;
 }
@@ -75,13 +75,26 @@ a{
 
 }
 .main-headings{
-    color: black;
+  color: black;
 }
 .whatsapp{
-      color: white;
-      background-color: #28b74b;
-      padding: 10px;
-    }
+  color: white;
+  background-color: #28b74b;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop / Laptops → 5 columns */
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 </style>
 
 </head>
