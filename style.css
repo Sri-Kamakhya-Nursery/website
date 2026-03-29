@@ -207,7 +207,62 @@ a{
   width: 25px;
   margin-left: 15px;
 }
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
 
-@media(max-width:480px){
-  
+  /* Increase font size */
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* HOME LOGO */
+  .home-logo {
+    width: 250px;
+  }
+
+  /* PLANTS → 2 cards per row */
+  .plants .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* PROJECTS → 1 card per row */
+  .projects .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce founder padding issue */
+  .founder {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  /* Section padding */
+  section {
+    padding: 40px 20px;
+  }
 }
