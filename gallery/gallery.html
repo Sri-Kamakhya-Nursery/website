@@ -3,99 +3,88 @@
 <head>
   <title>Plants</title>
   <style>
-    body { font-family: Arial; }
+  body { font-family: Arial; }
+  .gallery {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+  }
 
-    .gallery {
-      display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
+  .card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+  }
 
-    .card {
-      border: 1px solid #ddd;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      background: white;
-    }
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: white;
+  }
 
     /* FULLSCREEN */
-    .fullscreen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .fullscreen img {
-      max-width: 90%;
-      max-height: 90%;
-
-    }
-    h2{
-      text-align: center;
-      text-decoration: underline;
-    }
-    a{
-      color: rgb(12, 12, 12);
-    }
-    .whatsapp{
-      color: white;
-      background-color: #28b74b;
-      padding: 10px;
-    }
-    .social-media{
-      text-align: center;
-      padding-bottom: 30px;
-    }
-    .media-img{
-      width: 25px;margin-left: 15px;
-    }
-    .contact {
-      background: #e8f5e9;
-      padding-left: 30px;
-      padding-top: 15px;
-
-      }
-      .contact-head{
-        text-align: left;
-      }
-      .image-text{
-        text-align: center;
-        font-weight: 500;
-        
-      }
-    /* 📱 Mobile → 3 images */
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
+  .fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
   }
-}
 
-/* 📲 Tablet (iPad) → 4 images */
-@media (min-width: 601px) and (max-width: 1024px) {
+  .fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  h2{
+    text-align: center;
+    text-decoration: underline;
+  }
+  a{
+    color: rgb(12, 12, 12);
+  }
+  .whatsapp{
+    color: white;
+    background-color: #28b74b;
+    padding: 10px;
+  }
+  .social-media{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .media-img{
+    width: 25px;margin-left: 15px;
+  }
+  .contact {
+    background: #e8f5e9;
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+    .contact-head{
+      text-align: left;
+  }
+    .image-text{
+      text-align: center;
+      font-weight: 500;      
+  }
+@media (min-width: 768px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* 💻 Desktop → 5 images */
-@media (min-width: 1025px) {
+/* DESKTOP / LAPTOP → 5 columns */
+@media (min-width: 1024px) {
   .gallery {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+      
   </style>
 </head>
 
