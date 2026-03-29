@@ -23,6 +23,7 @@ section{
   top: 0;
   font-family: "Poppins", sans-serif;
 }
+
 .nav-links a:hover{
     text-decoration: underline;
 }
@@ -205,4 +206,8 @@ a{
 .media-img{
   width: 25px;
   margin-left: 15px;
+}
+
+@media(max-width:480px){
+  
 }
