@@ -76,11 +76,26 @@
         font-weight: 500;
         
       }
-    @media(max-width:480px){
-        .gallery { 
-      grid-template-columns: 1fr 1fr;
-    }
-      }
+    /* 📱 Mobile → 3 images */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 📲 Tablet (iPad) → 4 images */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 💻 Desktop → 5 images */
+@media (min-width: 1025px) {
+  .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
   </style>
 </head>
 
