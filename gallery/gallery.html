@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plants</title>
+<style>
+  body { font-family: Arial; }
+  .gallery {
+    display: grid;
+    gap: 15px;
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+
+  .card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: white;
+  }
+
+    /* FULLSCREEN */
+  .fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  h2{
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0;
+    color: #2e7d32;
+    letter-spacing: 1px;
+    text-decoration: underline;
+  }
+  a{
+    color: rgb(12, 12, 12);
+  }
+  .whatsapp{
+    color: white;
+    background-color: #28b74b;
+    padding: 10px;
+  }
+  .social-media{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .media-img{
+    width: 25px;margin-left: 15px;
+  }
+  .contact {
+    background: #e8f5e9;
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+    .contact-head{
+      text-align: left;
+  }
+    .image-text{
+      text-align: center;
+      font-weight: 500;      
+  }
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+      
+  </style>
+</head>
+
+<body>
+
+<h2 id="title"></h2>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="fullscreen" id="fullscreen">
+  <img id="fullImg">
+</div>
+
+<section id="contact" class="contact">
+  <h2 class="contact-head"><u>Contact Us</u></h2>
+  <p><strong>Address:</strong> Sri Kamakhya Nursery, kadiyam, Near Rajmundry ,East Godavari , Andhra Pradesh , 533126</p>
+  <p><strong>Phone:</strong><a href="tel:+918121760473"> +91 81217 60473</a></p>
+  <p><strong>Email:</strong><a href="mailto:srikamakhyanursery@gmail.com">srikamakhyanursery@gmail.com</a> </p><br>
+  <p><p><strong><a class="whatsapp" href="https://wa.me/918121760473">Chat on WhatsApp</a></strong></p></p>
+  
+  <div class="social-media" >
+    <a href="https://www.instagram.com/sri.kamakhya_nursery?igsh=MWEzY2gzNTJxMHY0MA=="><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430494/Instagram_icon_pbejan.png"></a>
+    <a href="https://x.com/kamakhyanursery"><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430490/X_icon.svg_xuxok0.png"></a>
+    <a href="https://t.me/sri_kamakhya_nursery"><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430490/Telegram_logo.svg_y4y9mr.webp"></a>
+    <a href="https://www.facebook.com/share/1B21y1H6wn/"><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430490/facebook-social-media-logo-icon-free-png_uf5suc.webp"></a>
+
+  </div>
+</section>
+
+<script src="gallery.js"></script>
+
+</body>
+</html>
+

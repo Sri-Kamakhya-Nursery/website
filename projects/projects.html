@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+
+<style>
+body {
+  margin: 0;
+  background: #111;
+  font-family: sans-serif;
+}
+
+/* GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* FIXES CROPPING ISSUE */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* FULLSCREEN VIEW */
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewer img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.title{
+    text-align: center;
+    color: white;
+}
+.contact {
+  background: #e8f5e9;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+a{
+  color: rgb(12, 12, 12);
+}
+.whatsapp{
+  color: white;
+}
+.social-media{
+  text-align: center;
+  padding-bottom: 30px;
+}
+.media-img{
+  width: 25px;
+  margin-left: 15px;
+
+}
+.main-headings{
+  color: black;
+}
+.whatsapp{
+  color: white;
+  background-color: #28b74b;
+  padding: 10px;
+}
+</style>
+
+</head>
+<body>
+    <h2 class="title">All Landscape Works</h2>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="viewer" id="viewer">
+  <img id="fullImg">
+</div>
+
+
+<section id="contact" class="contact">
+  <h2 class="main-headings"><u>Contact Us</u></h2>
+  <p><strong>Address:</strong> Sri Kamakhya Nursery, kadiyam, Near Rajmundry ,East Godavari , Andhra Pradesh , 533126</p>
+  <p><strong>Phone:</strong><a href="tel:+918121760473"> +91 81217 60473</a></p>
+  <p><strong>Email:</strong><a href="mailto:srikamakhyanursery@gmail.com">srikamakhyanursery@gmail.com</a> </p><br>
+  <p><p class="call-btn "><strong><a class="whatsapp" href="https://wa.me/918121760473">Chat on WhatsApp</a></strong></p></p>
+  
+  <div class="social-media" >
+    <a href="https://www.instagram.com/sri.kamakhya_nursery?igsh=MWEzY2gzNTJxMHY0MA=="><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430494/Instagram_icon_pbejan.png"></a>
+    <a href="https://x.com/kamakhyanursery"><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430490/X_icon.svg_xuxok0.png"></a>
+    <a href="https://t.me/sri_kamakhya_nursery"><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430490/Telegram_logo.svg_y4y9mr.webp"></a>
+    <a href="https://www.facebook.com/share/1B21y1H6wn/"><img class="media-img" src="https://res.cloudinary.com/dlnxunmpg/image/upload/v1774430490/facebook-social-media-logo-icon-free-png_uf5suc.webp"></a>
+
+  </div>
+</section>
+
+<script>
+// SHUFFLE FUNCTION (important)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// LOAD JSON
+fetch("images.json")
+.then(res => res.json())
+.then(data => {
+  shuffle(data); // shuffle every refresh
+
+  const gallery = document.getElementById("gallery");
+
+  data.forEach(item => {
+    const img = document.createElement("img");
+    img.src = item.image;
+
+    img.onclick = () => {
+      document.getElementById("viewer").style.display = "flex";
+      document.getElementById("fullImg").src = item.image;
+    };
+
+    gallery.appendChild(img);
+  });
+});
+
+// CLOSE FULLSCREEN
+document.getElementById("viewer").onclick = () => {
+  document.getElementById("viewer").style.display = "none";
+};
+</script>
+
+</body>
+</html>
