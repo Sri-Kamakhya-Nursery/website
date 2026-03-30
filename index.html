@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Kamakhya Nursery</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -10,15 +12,15 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
-    <img src="https://res.cloudinary.com/dlnxunmpg/image/upload/f_auto,q_auto/v1774408224/IMG_20260321_161750.png_iuw2p4.png" alt="Logo">
+    <img src="https://res.cloudinary.com/dlnxunmpg/image/upload/f_auto,q_auto/v1774408224/IMG_20260321_161750.png_iuw2p4.png">
   </div>
 
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
 
     <li class="dropdown">
-      <a href="#plants">Plants ▾</a>
+      <button class="drop-btn">Plants ▾</button>
       <ul class="dropdown-menu">
         <li><a href="#avenue-plants">Avenue Plants</a></li>
         <li><a href="#indoor-plants">Indoor Plants</a></li>
@@ -34,6 +36,10 @@
   </ul>
 
   <a href="tel:+918121760473" class="call-btn">Call Now</a>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
 </nav>
 
 <!-- HOME -->
@@ -132,7 +138,7 @@ At Sri Kamakhya Nursery, we are growing more than plants… we are growing trust
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2 class="main-headings"><u>Contact Us</u></h2>
-  <p><strong>Address:</Address></strong> Sri Kamakhya Nursery, kadiyam, Near Rajmundry ,East Godavari , Andhra Pradesh , 533126</p>
+  <p><strong>Address:</strong> Sri Kamakhya Nursery, kadiyam, Near Rajmundry ,East Godavari , Andhra Pradesh , 533126</p>
   <p><strong>Phone:</strong><a href="tel:+918121760473"> +91 81217 60473</a></p>
   <p><strong>Email:</strong><a href="mailto:srikamakhyanursery@gmail.com">srikamakhyanursery@gmail.com</a> </p><br>
   <p><p class="call-btn "><strong><a class="whatsapp" href="https://wa.me/918121760473">Chat on WhatsApp</a></strong></p></p>
@@ -145,6 +151,30 @@ At Sri Kamakhya Nursery, we are growing more than plants… we are growing trust
 
   </div>
 </section>
+  <script>
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  const dropdown = document.querySelector(".dropdown");
+  const dropBtn = document.querySelector(".drop-btn");
+
+  // Toggle mobile menu
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  // Dropdown click (mobile + desktop)
+  dropBtn.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
+  });
+
+  // Close menu when link clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      dropdown.classList.remove("active");
+    });
+  });
+</script>
 
 </body>
 </html>
